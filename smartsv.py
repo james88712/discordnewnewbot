@@ -2,6 +2,7 @@ import discord, asyncio
 import random
 import datetime
 from discord.ext import commands
+import os
 
 client = commands.Bot(command_prefix = '.')
 
@@ -29,6 +30,6 @@ async def on_message(message):
         embed.add_field(name='Welcome To Smart Server', value='고유번호ㅣ직업ㅣ닉네임 형식으로 닉네임 바꿔주세요!', inline=False)
         await message.channel.send(embed=embed)
 
-
-client.run('NzE1ODg0OTEwMzg0MjUwODgw.XtDvYQ.wl6GNDXe8t14wk6CK69Cy8-vNFo')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
          
